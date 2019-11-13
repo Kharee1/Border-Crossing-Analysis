@@ -1,7 +1,7 @@
 import csv
 import math
 
-dataFile = open("C:\\Users\\khare\\Desktop\\border-crossing-analysis-master\\insight_testsuite\\tests\\test_1\\input\\Border_Crossing_Entry_Data.csv", newline="")
+dataFile = open("input/Border_Crossing_Entry_Data.csv", newline="")
 content =csv.reader(dataFile, delimiter=',')
 
 #skipping "row" of column names
@@ -103,7 +103,7 @@ def total():
     print(int(d['Values'][6]) > int(sumFPed))
     #56810 is not greater than 172163
 
-    outfile = csv.writer(open("C:\\Users\\khare\\Desktop\\report.csv", "w"), delimiter=",", lineterminator="\n")
+    outfile = csv.writer(open("output/report.csv", "w"), delimiter=",", lineterminator="\n")
     outfile.writerow(['Border', 'Date', 'Measure', 'Value', 'Average'])
     outfile.writerow([d['Borders'][2], d['Dates'][2], d['Measures'][2], d['Values'][2], math.ceil(sumMPed)])
     outfile.writerow([d['Borders'][0], d['Dates'][2], d['Measures'][0], d['Values'][0], '0'])
